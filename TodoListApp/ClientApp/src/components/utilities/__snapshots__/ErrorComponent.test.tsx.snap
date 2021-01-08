@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> renders <Error /> 1`] = `
+<Fragment>
+  <div
+    className="alert alert-danger"
+    role="alert"
+  >
+    error
+  </div>
+</Fragment>
+`;

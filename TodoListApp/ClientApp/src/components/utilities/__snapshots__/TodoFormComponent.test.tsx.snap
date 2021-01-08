@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoForm /> renders <TodoForm /> 1`] = `
+<button
+  className="btn btn-primary"
+  onClick={[Function]}
+>
+  Create
+</button>
+`;
+
+exports[`<TodoForm /> renders <TodoForm /> and changes state to creating new todo list 1`] = `
+<div
+  className="jumbotron"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="name"
+      >
+        Task name
+      </label>
+      <input
+        className="form-control"
+        id="name"
+        onChange={[Function]}
+        placeholder="Todo task name"
+        type="text"
+        value="Test"
+      />
+      <small
+        className="form-text text-muted"
+      >
+        Your TODO task name
+      </small>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="priority"
+      >
+        Priority
+      </label>
+      <input
+        className="form-control"
+        id="priority"
+        onChange={[Function]}
+        placeholder="Priority"
+        type="number"
+        value={1}
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="status"
+      >
+        Status
+      </label>
+      <select
+        className="form-control"
+        id="status"
+        onChange={[Function]}
+        value={1}
+      >
+        <option
+          key="0"
+          value="0"
+        >
+          Not started
+        </option>
+        <option
+          key="1"
+          value="1"
+        >
+          In progress
+        </option>
+        <option
+          key="2"
+          value="2"
+        >
+          Completed
+        </option>
+      </select>
+    </div>
+    <div
+      className="d-flex justify-content-between"
+    >
+      <button
+        className="btn btn-primary"
+        type="submit"
+      >
+        Create new task
+      </button>
+      <button
+        className="btn btn-default"
+        onClick={[Function]}
+        type="submit"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`<TodoForm /> renders <TodoForm /> in edit state 1`] = `
+<div
+  className="jumbotron"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="name"
+      >
+        Task name
+      </label>
+      <input
+        className="form-control"
+        id="name"
+        onChange={[Function]}
+        placeholder="Todo task name"
+        type="text"
+        value="Test"
+      />
+      <small
+        className="form-text text-muted"
+      >
+        Your TODO task name
+      </small>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="priority"
+      >
+        Priority
+      </label>
+      <input
+        className="form-control"
+        id="priority"
+        onChange={[Function]}
+        placeholder="Priority"
+        type="number"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="status"
+      >
+        Status
+      </label>
+      <select
+        className="form-control"
+        id="status"
+        onChange={[Function]}
+      >
+        <option
+          key="0"
+          value="0"
+        >
+          Not started
+        </option>
+        <option
+          key="1"
+          value="1"
+        >
+          In progress
+        </option>
+        <option
+          key="2"
+          value="2"
+        >
+          Completed
+        </option>
+      </select>
+    </div>
+    <div
+      className="d-flex justify-content-between"
+    >
+      <button
+        className="btn btn-primary"
+        type="submit"
+      >
+        Update task
+      </button>
+      <button
+        className="btn btn-default"
+        onClick={[Function]}
+        type="submit"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+`;
