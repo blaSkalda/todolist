@@ -2,7 +2,6 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { ApplicationState } from '../store';
 import * as TodoTasksService from '../store/TodoTasksService';
-import { TodoListStatus, TodoListStatusFriendlyNames } from '../enums';
 import Error from './utilities/ErrorComponent';
 import TodoCard from './utilities/TodoCardComponent';
 import TodoForm from './utilities/TodoFormComponent';

@@ -1,5 +1,4 @@
-import { Action, Reducer } from 'redux';
-import { AppThunkAction } from '.';
+import { Action, Reducer, Dispatch } from 'redux';
 
 // -----------------
 // STATE - This defines the type of data maintained in the Redux store.
@@ -58,10 +57,6 @@ interface ErrorTodoTaskAction {
     error: string;
 }
 
-interface TodoTaskError {
-    message: string;
-}
-
 // Declare a 'discriminated union' type. This guarantees that all references to 'type' properties contain one of the
 // declared type strings (and not any other arbitrary string).
 export type KnownAction = RequestTodoTasksAction | ReceiveTodoTasksAction | CreatedTodoTaskAction
@@ -73,10 +68,10 @@ export type KnownAction = RequestTodoTasksAction | ReceiveTodoTasksAction | Crea
 // They don't directly mutate state, but they can have external side-effects (such as loading data).
 
 export const actionCreators = {
-    requestTodoTasks: (): AppThunkAction<KnownAction> => (dispatch) => {
+    requestTodoTasks: () => (dispatch: Dispatch<KnownAction>): Promise<void> => {
 
         dispatch({ type: 'REQUEST_TODO_TASKS' });
-        fetch(`api/TodoTasks`)
+        return fetch(`api/TodoTasks`)
             .then(response => {
                 if (response.status !== 200) {
                     response.json().then(error => {
@@ -89,9 +84,9 @@ export const actionCreators = {
                 });
             });
     },
-    createTodoTask: (task: TodoTask): AppThunkAction<KnownAction> => (dispatch) => {
+    createTodoTask: (task: TodoTask) => (dispatch: Dispatch<KnownAction>): Promise<void> => {
         dispatch({ type: 'REQUEST_TODO_TASKS' });
-        fetch(`api/TodoTasks`, {
+        return fetch(`api/TodoTasks`, {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -108,9 +103,9 @@ export const actionCreators = {
                 });
             });
     },
-    updateTodoTask: (name: string, task: TodoTask): AppThunkAction<KnownAction> => (dispatch) => {
+    updateTodoTask: (name: string, task: TodoTask) => (dispatch: Dispatch<KnownAction>): Promise<void> => {
         dispatch({ type: 'REQUEST_TODO_TASKS' });
-        fetch(`api/TodoTasks/${name}`, {
+        return fetch(`api/TodoTasks/${name}`, {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -127,9 +122,9 @@ export const actionCreators = {
                 });
             });
     },
-    updateTodoTaskStatus: (name: string, status: number): AppThunkAction<KnownAction> => (dispatch) => {
+    updateTodoTaskStatus: (name: string, status: number) => (dispatch: Dispatch<KnownAction>): Promise<void> => {
         dispatch({ type: 'REQUEST_TODO_TASKS' });
-        fetch(`api/TodoTasks/${name}/${status}`, {
+        return fetch(`api/TodoTasks/${name}/${status}`, {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -145,9 +140,9 @@ export const actionCreators = {
                 });
             });
     },
-    deleteTodoTask: (name: string): AppThunkAction<KnownAction> => (dispatch) => {
+    deleteTodoTask: (name: string) => (dispatch: Dispatch<KnownAction>): Promise<void> => {
         dispatch({ type: 'REQUEST_TODO_TASKS' });
-        fetch(`api/TodoTasks/${name}`, {
+        return fetch(`api/TodoTasks/${name}`, {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -161,11 +156,13 @@ export const actionCreators = {
                 dispatch({ type: 'DELETED_TODO_TASK', originalName: name });
             });
     },
-    editTodoTask: (todoTask: TodoTask): AppThunkAction<KnownAction> => (dispatch) => {
+    editTodoTask: (todoTask: TodoTask) => (dispatch: Dispatch<KnownAction>): Promise<void> => {
         dispatch({ type: 'EDIT_TODO_TASK', editTask: todoTask });
+        return Promise.resolve();
     },
-    cancelTodoTask: (): AppThunkAction<KnownAction> => (dispatch) => {
+    cancelTodoTask: () => (dispatch: Dispatch<KnownAction>): Promise<void> => {
         dispatch({ type: 'EDIT_TODO_TASK', editTask: undefined });
+        return Promise.resolve();
     }
 };
 

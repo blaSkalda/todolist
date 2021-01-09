@@ -90,6 +90,7 @@
     "testRegex": ".*\\.(test)\\.(ts|tsx|js)$",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "collectCoverage": true
   }
 }

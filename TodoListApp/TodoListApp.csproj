@@ -24,6 +24,7 @@
   <ItemGroup>
     <None Remove="ClientApp\src\components\ErrorComponent.test.tsx" />
     <None Remove="ClientApp\src\components\ErrorComponent.tsx" />
+    <None Remove="ClientApp\src\components\TodoComponent.test.tsx" />
     <None Remove="ClientApp\src\components\utilities\TodoCardComponent.test.tsx" />
     <None Remove="ClientApp\src\components\utilities\TodoCardComponent.tsx" />
     <None Remove="ClientApp\src\components\utilities\TodoFormComponent.test.tsx" />
@@ -31,6 +32,7 @@
     <None Remove="ClientApp\src\enums\index.tsx" />
     <None Remove="ClientApp\src\enums\TodoListStatus.tsx" />
     <None Remove="ClientApp\src\setupTests.ts" />
+    <None Remove="ClientApp\src\store\TodoTaskService.test.tsx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\components\TodoComponent.test.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\utilities\ErrorComponent.test.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\utilities\ErrorComponent.tsx" />
     <TypeScriptCompile Include="ClientApp\src\components\utilities\TodoCardComponent.test.tsx" />
@@ -51,6 +54,7 @@
     <TypeScriptCompile Include="ClientApp\src\enums\index.tsx" />
     <TypeScriptCompile Include="ClientApp\src\enums\TodoListStatus.tsx" />
     <TypeScriptCompile Include="ClientApp\src\setupTests.ts" />
+    <TypeScriptCompile Include="ClientApp\src\store\TodoTaskService.test.tsx" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

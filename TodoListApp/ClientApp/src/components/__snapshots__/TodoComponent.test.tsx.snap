@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders TodoComponent 1`] = `
+<Provider
+  store={
+    Object {
+      "default": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Todo)>
+    <Todo
+      cancelTodoTask={[Function]}
+      createTodoTask={[Function]}
+      deleteTodoTask={[Function]}
+      editTodoTask={[Function]}
+      requestTodoTasks={[Function]}
+      todoTasks={Array []}
+      updateTodoTask={[Function]}
+      updateTodoTaskStatus={[Function]}
+    >
+      <div
+        className="card-columns"
+      />
+      <TodoForm
+        cancelTodoTask={[Function]}
+        createTodoTask={[Function]}
+        deleteTodoTask={[Function]}
+        editTodoTask={[Function]}
+        requestTodoTasks={[Function]}
+        todoTask={
+          Object {
+            "name": "",
+            "priority": 0,
+            "status": 0,
+          }
+        }
+        todoTasks={Array []}
+        updateTodoTask={[Function]}
+        updateTodoTaskStatus={[Function]}
+      >
+        <button
+          className="btn btn-primary"
+          onClick={[Function]}
+        >
+          Create
+        </button>
+      </TodoForm>
+    </Todo>
+  </Connect(Todo)>
+</Provider>
+`;
