@@ -10,6 +10,7 @@ namespace TodoListApp.Controllers
     [ApiController]
     public class ErrorController : ControllerBase
     {
+        [HttpGet("error")]
         public ErrorModel Error()
         {
             var context = HttpContext.Features.Get<IExceptionHandlerFeature>();
